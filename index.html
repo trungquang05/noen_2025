@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merry Christmas</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #0f0f1f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .tree {
+      font-family: monospace;
+      color: #2d5a27;
+      font-size: clamp(14px, 4vw, 18px);
+      line-height: 1.2;
+      animation: treeWiggle 3s ease-in-out infinite;
+      position: relative;
+    }
+
+    @keyframes treeWiggle {
+      0%,100% { transform: rotate(0); }
+      25% { transform: rotate(1deg); }
+      75% { transform: rotate(-1deg); }
+    }
+
+    .star {
+      color: yellow;
+      font-size: 28px;
+      animation: starTwinkle 1s infinite;
+      filter: drop-shadow(0 0 10px yellow);
+    }
+
+    @keyframes starTwinkle {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .trunk {
+      color: #8b4513;
+      margin-top: 6px;
+    }
+
+   
+    .message {
+       color: #ff6b6b;
+        font-size: calc(18px + 1vw);
+        font-family: "Arial", sans-serif;
+        text-shadow: 0 0 5px #ff6b6b;
+        animation: glo 1s infinite;
+        margin-bottom: 15px;
+        white-space: nowrap;
+    }
+
+    .message span {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      color: #e70c0c;
+    }
+
+    .message2 {
+      margin-top: 10px;
+      font-size: clamp(16px, 4vw, 20px);
+      animation: rainbow 5s infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color:red; }
+      25% { color:yellow; }
+      50% { color:#44ff44; }
+      75% { color:#4444ff; }
+      100% { color:red; }
+    }
+    .snow {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: snowfall linear forwards;
+    }
+
+    @keyframes snowfall {
+      from { transform: translateY(-10px); }
+      to { transform: translateY(100vh); }
+    }
+
+    .music-toggle {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .music-panel {
+      position: fixed;
+      bottom: 68px;
+      right: 16px;
+      width: 220px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 10px;
+      color: white;
+      transform: translateY(160%);
+      transition: transform 0.4s ease;
+      z-index: 1000;
+    }
+
+    .music-panel.active {
+      transform: translateY(0);
+    }
+
+    .music-title {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .music-panel select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      border: none;
+    }
+
+    .music-buttons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 18px;
+    }
+
+    .music-buttons span {
+      cursor: pointer;
+    }
+
+    .music-buttons input {
+      flex: 1;
+    }
+
+    @media (max-width: 480px) {
+      .music-panel {
+        width: 200px;
+      }
+    }
+    @keyframes treeRGB {
+  0%   { color: rgb(0, 255, 0); }
+  25%  { color: rgb(0, 200, 255); }
+  50%  { color: rgb(255, 0, 255); }
+  75%  { color: rgb(255, 255, 0); }
+  100% { color: rgb(0, 255, 0); }
+}
+
+.tree {
+  animation:
+    treeWiggle 3s ease-in-out infinite,
+    treeRGB 4s linear infinite;
+}
+@keyframes textBlink {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff6b6b;
+  }
+  50% {
+    opacity: 0.4;
+    text-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff6b6b;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="tree">
+      <div class="star">⭐</div>
+      *<br>***<br>*****<br>*******<br>*********<br>
+      ***********<br>*************<br>***************<br>
+      <div class="trunk">||||</div>
+    </div>
+
+    <div class="message">
+      🎄 chúc mn noell vui vẻ,sớm có ny để được đi chơi nhé:D 🎄
+      <span>tr_quang05</span>
+    </div>
+
+    <div class="message2">not te:tìm cây thông để bật nhạc noem thì nghe nhạc thôi :3</div>
+  </div>
+  <div class="music-toggle" onclick="togglePanel()">🎄</div>
+
+  <div class="music-panel" id="musicPanel">
+    <div class="music-title">🎶 Christmas Music</div>
+
+    <select id="musicSelect" onchange="changeMusic()">
+          <option value="nhac giang sinh.mp3">nhac giang sinh ko loi</option>
+          <option value="sap vao dong.mp3">sap vao dong</option>
+      <option value="mot nam moi ba.mp3">một năm mới bình an:3</option>
+    </select>
+
+    <div class="music-buttons">
+      <span id="playIcon" onclick="toggleMusic()">▶️</span>
+      <span>🔔</span>
+      <input type="range" min="0" max="1" step="0.01" value="0.5"
+             onchange="changeVolume(this.value)">
+      <span>🎅</span>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop></audio>
+
+  <script>
+    const panel = document.getElementById("musicPanel");
+    const audio = document.getElementById("bgMusic");
+    const musicSelect = document.getElementById("musicSelect");
+    const playIcon = document.getElementById("playIcon");
+
+    audio.src = musicSelect.value;
+    audio.volume = 0.5;
+    let playing = false;
+
+    function togglePanel() {
+      panel.classList.toggle("active");
+    }
+
+    function toggleMusic() {
+      if (playing) {
+        audio.pause();
+        playIcon.textContent = "▶️";
+      } else {
+        audio.play();
+        playIcon.textContent = "⏸️";
+      }
+      playing = !playing;
+    }
+
+    function changeMusic() {
+      audio.pause();
+      audio.src = musicSelect.value;
+      audio.load();
+      audio.play();
+      playIcon.textContent = "⏸️";
+      playing = true;
+    }
+
+    function changeVolume(v) {
+      audio.volume = v;
+    }
+
+    function randomRGB() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`;
+}
+
+function createSnow() {
+  const s = document.createElement("div");
+  s.className = "snow";
+
+  s.style.left = Math.random() * window.innerWidth + "px";
+  s.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+
+  s.style.backgroundColor = randomRGB();
+  s.style.boxShadow = `0 0 8px ${randomRGB()}`;
+
+  document.body.appendChild(s);
+
+  s.addEventListener("animationend", () => s.remove());
+}
+
+
+    setInterval(createSnow, 100);
+  </script>
+
+</body>
+</html>
